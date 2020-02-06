@@ -7,9 +7,9 @@ import './style.css';
 
 function Picture1(props) {
   return (
-    <div class="card border-primary mb-3 pictureCard">
+    <button className="card border-primary mb-3 pictureCard" onClick={props.onClick}>
       <img src={props.image} alt="card" />
-    </div>
+    </button>
   );
 }
 
