@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './Navbar';
 import Card from './Card';
 import picture1 from "./Card/images/picture1.jpg";
 import picture2 from "./Card/images/picture2.jpg";
@@ -15,9 +15,13 @@ import picture10 from "./Card/images/picture10.jpg";
 import picture11 from "./Card/images/picture11.jpg";
 import picture12 from "./Card/images/picture12.jpg";
 
+
 function App() {
   return (
     <div className="App">
+      <NavBar 
+        score={2+2}
+      />
       <Card image={picture1}/>
       <Card image={picture2}/>
       <Card image={picture3}/>

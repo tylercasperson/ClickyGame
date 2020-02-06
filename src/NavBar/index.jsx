@@ -7,9 +7,9 @@ import './style.css';
 
 function NavBar(props) {
   return (
-    <nav class="nav nav-pills nav-fill">
+    <nav class="nav justify-content-center col-md-12">
         <div className="col-md-1">Clicky Game</div>
-        <div className="col-md-4"></div>
+        <div className="col-md-4 track"></div>
         <div>Score: {props.score}</div>
     </nav>
   );
