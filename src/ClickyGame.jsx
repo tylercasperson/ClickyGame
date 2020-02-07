@@ -16,6 +16,10 @@ import picture11 from "./Card/images/picture11.jpg";
 import picture12 from "./Card/images/picture12.jpg";
 
 
+
+
+
+
 class ClickyGame extends Component {
     
     state =
@@ -23,12 +27,24 @@ class ClickyGame extends Component {
         debug: true,
         score: 0,
         imagesClicked: [],
-        pictureArray: ['picture1', 'picture2', 'picture3', 'picture4', 'picture5', 'picture6', 'picture7', 'picture8', 'picture9', 'picture10', 'picture11', 'picture12']
+        pictureArray: [picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8, picture9, picture10, picture11, picture12].sort(function() { return 0.5 - Math.random() })
     }
 
-    // boundClick() {
-    //   console.log(props.key);
-    // }
+    alreadyClicked = (picture) => {
+      const newPictures = [ ...this.state.pictureArray, picture];
+      this.setState=({imagesClicked:newPictures});
+
+      console.log();
+   
+      // console.log('2');
+      // console.log(newPictures);
+      // console.log('3');
+      // console.log(picture);
+      // console.log('4');
+      // console.log(this.state.pictureArray);
+      
+    }
+
 
     render = () =>
     {
@@ -37,15 +53,16 @@ class ClickyGame extends Component {
         <NavBar 
           score={2+2}
         />
-
+    
         {this.state.pictureArray.map((pictureArr, i) =>
           {
             return(
-              <Card
-                key={i+1}
-                image={'picture' + i}
-                onClick={() => console.log(i)}
-            />
+                <Card
+                  key={i+1}
+                  src={pictureArr}
+                  alt={'picture' + i}
+                  onClick={() => this.alreadyClicked(i+1)}
+                />
             )
           })}
       </div>
