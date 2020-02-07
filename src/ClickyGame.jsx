@@ -15,14 +15,15 @@ import picture10 from "./Card/images/picture10.jpg";
 import picture11 from "./Card/images/picture11.jpg";
 import picture12 from "./Card/images/picture12.jpg";
 class ClickyGame extends Component {
-    
-    state =
-    {
-        debug: true,
-        score: 0,
-        imagesClicked: [],
-        pictureArray: [picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8, picture9, picture10, picture11, picture12].sort(function() { return 0.5 - Math.random() })
-    }
+  
+      state =
+      {
+          debug: true,
+          score: 0,
+          imagesClicked: [],
+          pictureArray: [picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8, picture9, picture10, picture11, picture12].sort(function() { return 0.5 - Math.random() }),
+          best: 0
+      }
 
     alreadyClicked = (picture) => {
       const pictureShuffle = [picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8, picture9, picture10, picture11, picture12].sort(function() { return 0.5 - Math.random() });
@@ -30,22 +31,26 @@ class ClickyGame extends Component {
 
       const newPictures = [ ...this.state.imagesClicked, picture];
       this.setState({imagesClicked:newPictures});   
-      console.log(this.state.imagesClicked);  
       
-      if(this.state.imagesClicked.indexOf(picture) !== -1){
+      if((this.state.imagesClicked.indexOf(picture) === -1)){
         const newScore = this.state.score;
         this.setState({score:newScore+1})
+        console.log(this.state.score>this.state.best);
+        if(this.state.score>=this.state.best){
+          this.setState({best:newScore+1})
+        }
+      } else {
+        this.setState({score:0})
       }
-
-      console.log(this.state.imagesClicked.indexOf(picture) !== -1);
     }
 
     render = () =>
     {
     return (
-      <div className="App">
+      <div className="clickyGame">
         <NavBar 
           score={this.state.score}
+          best={this.state.best}
         />
     
         {this.state.pictureArray.map((pictureArr, i) =>

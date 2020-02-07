@@ -11,6 +11,7 @@ function NavBar(props) {
         <div className="col-md-1">Clicky Game</div>
         <div className="col-md-4 track"></div>
         <div>Score: {props.score}</div>
+        <div className="col-md-2">Best: {props.best}</div>
     </nav>
   );
 }
