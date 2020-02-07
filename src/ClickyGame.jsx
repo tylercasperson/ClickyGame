@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ClickyGame.css';
 import NavBar from './Navbar';
+import Instructions from './Instructions';
 import Card from './Card';
 import picture1 from "./Card/images/picture1.jpg";
 import picture2 from "./Card/images/picture2.jpg";
@@ -35,7 +36,6 @@ class ClickyGame extends Component {
       if((this.state.imagesClicked.indexOf(picture) === -1)){
         const newScore = this.state.score;
         this.setState({score:newScore+1})
-        console.log(this.state.score>this.state.best);
         if(this.state.score>=this.state.best){
           this.setState({best:newScore+1})
         }
@@ -52,18 +52,20 @@ class ClickyGame extends Component {
           score={this.state.score}
           best={this.state.best}
         />
-    
-        {this.state.pictureArray.map((pictureArr, i) =>
-          {
-            return(
-                <Card
-                  key={i+1}
-                  src={pictureArr}
-                  alt={'picture' + i}
-                  onClick={() => this.alreadyClicked(pictureArr)}
-                />
-            )
-          })}
+        <Instructions />
+        <div className="picturesGoHere">
+          {this.state.pictureArray.map((pictureArr, i) =>
+            {
+              return(
+                  <Card
+                    key={i+1}
+                    src={pictureArr}
+                    alt={'picture' + i}
+                    onClick={() => this.alreadyClicked(pictureArr)}
+                  />
+              )
+            })}
+          </div>
       </div>
     );
   }

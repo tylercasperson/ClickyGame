@@ -1,10 +1,6 @@
 import React from 'react';
 import './style.css';
 
-
-// let imageArray = [picture1, picture2];
-// let randomImage = Math.floor(Math.random()*imageArray.length);
-
 function NavBar(props) {
   return (
     <nav className="nav justify-content-center col-md-12">
