@@ -12,4 +12,4 @@ function NavBar(props) {
   );
 }
 
-export default NavBar;
+export default NavBar;  
