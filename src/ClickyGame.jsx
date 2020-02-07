@@ -22,12 +22,13 @@ class ClickyGame extends Component {
     {
         debug: true,
         score: 0,
-        imagesClicked: []
+        imagesClicked: [],
+        pictureArray: ['picture1', 'picture2', 'picture3', 'picture4', 'picture5', 'picture6', 'picture7', 'picture8', 'picture9', 'picture10', 'picture11', 'picture12']
     }
 
-    boundClick() {
-      console.log('tyler');
-    } 
+    // boundClick() {
+    //   console.log(props.key);
+    // }
 
     render = () =>
     {
@@ -36,21 +37,17 @@ class ClickyGame extends Component {
         <NavBar 
           score={2+2}
         />
-        <Card 
-          image={picture1}
-          onClick={this.boundClick}
-        />
-        <Card image={picture2}/>
-        <Card image={picture3}/>
-        <Card image={picture4}/>
-        <Card image={picture5}/>
-        <Card image={picture6}/>
-        <Card image={picture7}/>
-        <Card image={picture8}/>
-        <Card image={picture9}/>
-        <Card image={picture10}/>
-        <Card image={picture11}/>
-        <Card image={picture12}/>
+
+        {this.state.pictureArray.map((pictureArr, i) =>
+          {
+            return(
+              <Card
+                key={i+1}
+                image={'picture' + i}
+                onClick={() => console.log(i)}
+            />
+            )
+          })}
       </div>
     );
   }
