@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ClickyGame.css';
-import NavBar from './Navbar';
+import NavBar from './NavBar';
 import Instructions from './Instructions';
 import Card from './Card';
 import picture1 from "./Card/images/picture1.jpg";
