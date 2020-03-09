@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './ClickyGame.css';
 import NavBar from './NavBar';
-// import NavBar from './Navbar';
 import Instructions from './Instructions';
 import Card from './Card';
 import picture1 from "./Card/images/picture1.jpg";
@@ -15,7 +14,7 @@ import picture8 from "./Card/images/picture8.jpg";
 import picture9 from "./Card/images/picture9.jpg";
 import picture10 from "./Card/images/picture10.jpg";
 import picture11 from "./Card/images/picture11.jpg";
-import picture12 from "./Card/images/picture12.jpg";  
+import picture12 from "./Card/images/picture12.jpg";
 class ClickyGame extends Component {
   
       state =
@@ -41,7 +40,7 @@ class ClickyGame extends Component {
           this.setState({best:newScore+1})
         }
       } else {
-        this.setState({score:0})
+        this.setState({score:0, imagesClicked: []})
       }
     }
 

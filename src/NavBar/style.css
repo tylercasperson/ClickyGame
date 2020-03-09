@@ -1,9 +1,13 @@
-.best, .score, .title
-{
-    font-weight: bold;
-    font-size: xx-large;
-}
-nav
+.nav
 {
     background-color: white;
+    display: flex;
+}
+
+.best, .score, .title
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 32pt;
+    font-weight: bold;
+    padding-right: 20px;
 }
