@@ -1,6 +1,6 @@
-#Nature's Charm Memory Game
+# Nature's Charm Memory Game
 
-###Click on a new image to get a point. If you click on an image twice then you start all over.
+### Click on a new image to get a point. If you click on an image twice then you start all over.
 
 ## Homework Overview
 
